@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Todo App</title>
+    </head>
+
+    <body>
+        <h1>Todo List</h1>
+
+        <ul id="list">
+            <li>Test Item</li>
+        </ul>
+
+        <h2>Add a New Item</h2>
+        <input id="newItem" type="text" value="">
+        <button onclick="addItem()">Add Item</button>
+    </body>
+
+    <script>
+        let list = document.getElementById("list")
+        
+        function addItem() {
+            let newItemName = document.getElementById("newItem")
+
+            if (newItemName.value === "") {
+                alert("Please enter a item name")
+                return
+            }
+
+            let newItem = document.createElement("li")
+
+            newItem.appendChild(document.createTextNode(newItemName.value))
+            list.append(newItem)
+            
+            newItemName.value = ""
+        }
+    </script>
+</html>
+
